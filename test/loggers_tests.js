@@ -124,7 +124,7 @@ describe('BufferedMetricsLogger', function() {
     it('should allow setting the agent tags', function() {
         var agent = new https.Agent({ keepAlive: true, keepAliveMsecs: 10 });
         var l = new BufferedMetricsLogger({
-            reporter: new reporters.DataDogReporter('yolo', 'yolo', agent),
+            reporter: new reporters.DataDogReporter('yolo', 'yolo', agent, 'host'),
         });
         // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
         dogapi.client.proxy_agent.keepAlive.should.equal(true);
